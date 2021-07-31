@@ -100,17 +100,17 @@ function  colorHeader(){
    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
        if(scrollTop>200 && scrollTop<1000){
-          var collor = (scrollTop-200)/800;
+          var collor = ((scrollTop-200)/800)*0.4;
           console.log( collor );
-          document.querySelector('.wrapper-menu').style.backgroundColor='rgb(87, 133, 155, '+collor+')';
-          document.querySelector('.header__logo').style.backgroundColor='rgb(87, 133, 155,'+collor+')';
+          document.querySelector('.wrapper-menu').style.backgroundColor='rgba(87, 133, 155, '+collor+')';
+          document.querySelector('.header__logo').style.backgroundColor='rgba(87, 133, 155,'+collor+')';
        }else{
          document.querySelector('.wrapper-menu').style.backgroundColor='transparent';
          document.querySelector('.header__logo').style.backgroundColor='transparent';
        }
         if(scrollTop>990){
-         document.querySelector('.wrapper-menu').style.backgroundColor='rgb(87, 133, 155,1)';
-         document.querySelector('.header__logo').style.backgroundColor='rgb(87, 133, 155,1)';
+         document.querySelector('.wrapper-menu').style.backgroundColor='rgb(87, 133, 155,0.4)';
+         document.querySelector('.header__logo').style.backgroundColor='rgb(87, 133, 155,0.4)';
        }
          
        if(document.documentElement.clientWidth<1024){

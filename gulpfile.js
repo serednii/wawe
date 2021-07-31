@@ -35,11 +35,11 @@ function scripts(){
   return src(
     [
      // 'node_modules/jquery/dist/jquery.js',
-      'app/js/main.js'
+      'js/main.js'
     ])  
      .pipe(concat('main.min.js'))
     .pipe(uglify()) // мініиізує файл
-     .pipe(dest('app/js'))
+     .pipe(dest('js/'))
      .pipe(sync.stream())
 }
  
@@ -77,7 +77,7 @@ function watching(){
    //watch(['app/js**/*.js','!app/js/main.min.js'], scripts);
    //watch(['app/**/*.html',]).on('change', sync.reload);
     watch(['css/**/*.css'],styles);
-    watch(['js**/*.js'], scripts);
+    watch(['js/**/*.js'], scripts);
    watch(['**/*.html',]).on('change', sync.reload);
 }
 
