@@ -601,9 +601,9 @@ body {
 }
 
 .video::before {
-  position: a;
-  width: 100pbsolute;
-  content: "" x;
+  position: absolute;
+  width: 100px;
+  content: "";
   height: 100px;
   background-image: url("../images/play-icon.svg");
   background-repeat: no-repeat;
