@@ -1,0 +1,78 @@
+/* stylelint-disable */
+:root {
+  --burger-width: 40px;
+  --burger-height: 40px;
+  --burger-line-height: 3px;
+}
+
+.burger {
+  background-color: #57859b;
+  padding: 10px;
+  position: relative;
+  right: 35px;
+  top: 35px;
+  z-index: 15;
+  border-radius: 5px;
+  display: none;
+}
+
+.burger__button {
+  position: relative;
+  border: none;
+  padding: 0;
+  width: var(--burger-width);
+  height: var(--burger-height);
+  color: #000;
+  background-color: transparent;
+  cursor: pointer;
+  align-items: center;
+}
+
+
+.burger__button::before,
+.burger__button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--burger-line-height);
+  background-color: aliceblue;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.burger__button::before {
+  top: 0;
+}
+
+.burger__button::after {
+  top: calc(100% - var(--burger-line-height));
+}
+
+.burger__line {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: var(--burger-line-height);
+  background-color: aliceblue;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.burger--active::before {
+  top: 50%;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.burger--active::after {
+  top: 50%;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.burger--active .burger__line {
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
